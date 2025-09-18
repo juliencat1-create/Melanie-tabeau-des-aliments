@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommandations Alimentaires - Mélanie L.</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .recommendations-card {
+            width: 100%;
+            max-width: 1100px;
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.08),
+                0 8px 25px rgba(0, 0, 0, 0.04);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .recommendations-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #10b981, #ef4444);
+            border-radius: 24px 24px 0 0;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        
+        .title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 8px;
+            letter-spacing: -0.025em;
+        }
+        
+        .patient-name {
+            font-size: 14px;
+            color: #6b7280;
+            font-weight: 500;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+        
+        .section {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .section-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        
+        .to-favor .section-icon {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+        
+        .to-limit .section-icon {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        .food-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .food-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 16px;
+            background: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.2s ease;
+        }
+        
+        .food-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .food-emoji {
+            font-size: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .food-content {
+            flex: 1;
+        }
+        
+        .food-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 4px;
+        }
+        
+        .food-description {
+            font-size: 13px;
+            color: #6b7280;
+            line-height: 1.4;
+        }
+        
+        .to-favor .food-item {
+            border-left: 4px solid #10b981;
+        }
+        
+        .to-limit .food-item {
+            border-left: 4px solid #ef4444;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .recommendations-card {
+                padding: 24px;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="recommendations-card">
+        <div class="header">
+            <div class="title">Recommandations Alimentaires</div>
+            <div class="patient-name">Mélanie L.</div>
+        </div>
+        
+        <div class="content">
+            <!-- À Privilégier -->
+            <div class="section to-favor">
+                <div class="section-header">
+                    <div class="section-icon">✅</div>
+                    <div class="section-title">À Privilégier</div>
+                </div>
+                
+                <ul class="food-list">
+                    <li class="food-item">
+                        <div class="food-emoji">🥬</div>
+                        <div class="food-content">
+                            <div class="food-title">Légumes variés</div>
+                            <div class="food-description">(verts, colorés, crucifères) → ½ assiette à chaque repas</div>
+                        </div>
+                    </li>
+                    <li class="food-item">
+                        <div class="food-emoji">🍎</div>
+                        <div class="food-content">
+                            <div class="food-title">Fruits entiers</div>
+                            <div class="food-description">(pomme, baies, agrumes) – 2/jour</div>
+                        </div>
+                    </li>
+                    <li class="food-item">
+                        <div class="food-emoji">🌾</div>
+                        <div class="food-content">
+                            <div class="food-title">Féculents complets</div>
+                            <div class="food-description">(riz complet, pâtes semi-complètes, quinoa, patate douce)</div>
+                        </div>
+                    </li>
+                    <li class="food-item">
+                        <div class="food-emoji">🫘</div>
+                        <div class="food-content">
+                            <div class="food-title">Légumineuses</div>
+                            <div class="food-description">(lentilles, pois chiches, haricots) 2-3×/sem → fibres + satiété</div>
+                        </div>
+                    </li>
+                    <li class="food-item">
+                        <div class="food-emoji">🍗</div>
+                        <div class="food-content">
+                            <div class="food-title">Protéines maigres</div>
+                            <div class="food-description">poulet, dinde, œufs, tofu, tempeh, poisson blanc</div>
+                        </div>
+                    </li>
+                    <li class="food-item">
+                        <div class="food-emoji">🥑</div>
+                        <div class="food-content">
+                            <div class="food-title">Bonnes graisses</div>
+                            <div class="food-description">avocat, huile de colza, huile d'olive, graines de lin/chia</div>
+                        </div>
+                    </li>
+                    <li class="food-item">
+                        <div class="food-emoji">🥛</div>
+                        <div class="food-content">
+                            <div class="food-title">Produits laitiers légers</div>
+                            <div class="food-description">yaourt nature, skyr, kéfir</div>
+                        </div>
+                    </li>
+                    <li class="food-item">
+                        <div class="food-emoji">🌱</div>
+                        <div class="food-content">
+                            <div class="food-title">Protéines végétales</div>
+                            <div class="food-description">pois, fèves, soja texturé, seitan</div>
+                        </div>
+                    </li>
+                    <li class="food-item">
+                        <div class="food-emoji">☕</div>
+                        <div class="food-content">
+                            <div class="food-title">Boissons</div>
+                            <div class="food-description">eau (2 L/jour), thé vert, tisanes relaxantes (sommeil)</div>
+                        </div>
+                    </li>
+                    <li class="food-item">
+                        <div class="food-emoji">🌿</div>
+                        <div class="food-content">
+                            <div class="food-title">Fibres prébiotiques</div>
+                            <div class="food-description">(flocons d'avoine, artichaut, ail, oignon) → digestion</div>
+                        </div>
+                    </li>
+                    <li class="food-item">
+                        <div class="food-emoji">🧄</div>
+                        <div class="food-content">
+                            <div class="food-title">Aliments protecteurs cardio</div>
+                            <div class="food-description">curcuma, gingembre, fruits rouges, ail</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- À Limiter / Éviter -->
+            <div class="section to-limit">
+                <div class="section-header">
+                    <div class="section-icon">❌</div>
+                    <div class="section-title">À Limiter / Éviter</div>
+                </div>
+                
+                <ul class="food-list">
+                    <li class="food-item">
+                        <div class="food-emoji">🍟</div>
+                        <div class="food-content">
+                            <div class="food-title">Fritures, plats panés, fast-food</div>
+                        </div>
+                    </li>
+                    <li class="food-item">
+                        <div class="food-emoji">🧃</div>
+                        <div class="food-content">
+                            <div class="food-title">Jus de fruits, desserts sucrés, confiseries</div>
+                        </div>
+                    </li>
+                    <li class="food-item">
+                        <div class="food-emoji">🍞</div>
+                        <div class="food-content">
+                            <div class="food-title">Pain blanc, pâtes/riz raffinés en excès</div>
+                        </div>
+                    </li>
+                    <li class="food-item">
+                        <div class="food-emoji">🥫</div>
+                        <div class="food-content">
+                            <div class="food-title">Plats préparés riches en sel/sucres cachés</div>
+                        </div>
+                    </li>
+                    <li class="food-item">
+                        <div class="food-emoji">🥓</div>
+                        <div class="food-content">
+                            <div class="food-title">Charcuterie, viandes grasses, steaks hachés bas de gamme</div>
+                        </div>
+                    </li>
+                    <li class="food-item">
+                        <div class="food-emoji">🧀</div>
+                        <div class="food-content">
+                            <div class="food-title">Fromages gras, excès de beurre, sauces à la crème</div>
+                        </div>
+                    </li>
+                    <li class="food-item">
+                        <div class="food-emoji">🍰</div>
+                        <div class="food-content">
+                            <div class="food-title">Desserts lactés sucrés, fromages industriels</div>
+                        </div>
+                    </li>
+                    <li class="food-item">
+                        <div class="food-emoji">🍪</div>
+                        <div class="food-content">
+                            <div class="food-title">Produits ultra-transformés riches en additifs</div>
+                        </div>
+                    </li>
+                    <li class="food-item">
+                        <div class="food-emoji">🥤</div>
+                        <div class="food-content">
+                            <div class="food-title">Sodas, boissons énergétiques, alcool fréquent</div>
+                        </div>
+                    </li>
+                    <li class="food-item">
+                        <div class="food-emoji">❌</div>
+                        <div class="food-content">
+                            <div class="food-title">Excès de pain/fromage en collation</div>
+                        </div>
+                    </li>
+                    <li class="food-item">
+                        <div class="food-emoji">🧂</div>
+                        <div class="food-content">
+                            <div class="food-title">Excès de sel</div>
+                            <div class="food-description">(plats préparés, charcuterie)</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
